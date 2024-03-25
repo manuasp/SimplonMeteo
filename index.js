@@ -13,10 +13,8 @@ btnloc.addEventListener('clic', () => {
     .then(response => response.json())
     .then(datas => {
         cityEl.textContent = datas.name;
-        temperatureEl.textContent = "${datas.main.temp} °";
+        temperatureEl.textContent = "${datas.main.temp} °F";
         descriptionEl.textContent = datas.weather[0].description;
         //je vais chercher les information via le json de openweathermap
     })
 })
-
-
