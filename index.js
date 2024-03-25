@@ -1,8 +1,8 @@
 const btnloc = document.querySelector("#btnloc");
 const searchloc = document.querySelector("#searchloc");
-const city = document.querySelector("#city");
-const temperature = document.querySelector("#temper");
-const description = document.querySelector("#desc");
+const cityEl = document.querySelector("#city");
+const temperatureEl = document.querySelector("#temper");
+const descriptionEl = document.querySelector("#desc");
 
 btnloc.addEventListener('clic', () => {
     const ville = searchloc.value;
@@ -12,7 +12,7 @@ btnloc.addEventListener('clic', () => {
     //fetch = creer une demande pour un server. J'ai utilisé l'API de https://openweathermap.org/api
     .then(response => response.json())
     .then(datas => {
-        emplacementEl.textContent = datas.name;
+        cityEl.textContent = datas.name;
         temperatureEl.textContent = "${datas.main.temp} °";
         descriptionEl.textContent = datas.weather[0].description;
         //je vais chercher les information via le json de openweathermap
